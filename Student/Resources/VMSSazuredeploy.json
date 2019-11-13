@@ -727,7 +727,7 @@
                         "forceUpdateTag": "1.0.0",
                         "settings": {
                             "fileUris": [
-                                "https://raw.githubusercontent.com/rkuehfus/AzureMonitoringHackathon/master/Student/Resources/SetupVSServer.ps1"
+                                "https://raw.githubusercontent.com/maxserg/AzureMonitoringWorkshop/master/Student/Resources/SetupVSServer.ps1"
                             ],
                             "commandToExecute": "[concat('powershell.exe -ExecutionPolicy Unrestricted -File SetupVSServer.ps1 ', ' ', variables('sqlSrvDBName'), ' ', parameters('password'))]"
                         }
@@ -910,7 +910,7 @@
                                     "autoUpgradeMinorVersion": true,
                                     "settings": {
                                         "fileUris": [
-                                            "https://raw.githubusercontent.com/rkuehfus/AzureMonitoringHackathon/master/Student/Resources/SetupWebServers.ps1"
+                                            "https://raw.githubusercontent.com/maxserg/AzureMonitoringWorkshop/master/Student/Resources/SetupWebServers.ps1"
                                         ],
                                         "commandToExecute": "[concat('powershell.exe -ExecutionPolicy Unrestricted -File SetupWebServers.ps1 ',variables('VisualStudioSrvName'), ' ', parameters('username'), ' ', parameters('password'))]"
                                     }
