@@ -847,7 +847,7 @@
             "properties": {
                 "overprovision": false,
                 "upgradePolicy": {
-                    "mode": "Manual"
+                    "mode": "Automatic"
                 },
                 "singlePlacementGroup": "[parameters('singlePlacementGroup')]",
                 "virtualMachineProfile": {
