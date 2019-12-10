@@ -7,11 +7,11 @@
 # Install-Module -Name AzureRM -Force -Scope CurrentUser -AllowClobber
 
 #Step 1: Use a name no longer then five charactors all lowercase.  Your initials would work well if working in the same sub as others.
-$MonitoringHackName = 'your-initials-here'
+$MonitoringHackName = 'msk50'
 
 #Step 2: Create ResourceGroup after updating the location to one of your choice. Use get-AzureRmLocation to see a list
 Connect-AzureRmAccount
-New-AzureRMResourceGroup -Name $MonitoringHackName -Location 'East US' #The hack uses a few features in preview so its best to leave this in East US
+New-AzureRMResourceGroup -Name $MonitoringHackName -Location 'West Europe' #The hack uses a few features in preview so its best to leave this in East US
 $rg = get-AzureRmresourcegroup -Name $MonitoringHackName
 
 #Step 3: Create Key Vault and set flag to enable for template deployment with ARM
