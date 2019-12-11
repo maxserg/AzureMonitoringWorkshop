@@ -29,3 +29,35 @@ Heartbeat
 | summarize max(TimeGenerated) by Computer
 | where max_TimeGenerated < ago(15m)
 | count 
+
+
+//MBytes sent to Log Analytics by ALL solutions/Tables
+union withsource = tt *
+//| where _IsBillable == true
+| summarize MBytes=round(sum(_BilledSize/1024/1024),2)  by  Solution=tt  , _IsBillable
+| sort by MBytes nulls last
+
+
+// Disclaimer: All prices shown are in USD ($). This is a summary estimate, not a quote.
+// source: https://azure.microsoft.com/en-us/pricing/
+//
+let daystoSearch = 31d; // Please enter how many days worth of data to look at?
+let ala_payg = 2.30; // Azure Log Analytics Pricing ($ USD EASTUS PAYG)
+let sen_payg = 2.00; // Azure Sentinel Pricing ($ USD EASTUS PAYG)
+union withsource = tt *
+| where TimeGenerated > startofday(ago(daystoSearch)) and TimeGenerated < startofday(now())
+// Only look at chargable Tables
+| where _IsBillable == True
+| summarize
+TotalGBytes =round(sum(_BilledSize/(1024*1024*1024)),2),
+EstimatedALA_USD=round(ala_payg * sum(_BilledSize/(1024*1024*1024)),2),
+EstimatedSEN_USD=round(sen_payg * sum(_BilledSize/(1024*1024*1024)),2),
+OldestRecord =min(TimeGenerated), NewestRecord=max(TimeGenerated)
+by Solution=tt
+| sort by TotalGBytes desc
+// stop query here if you want a row by row breakdown (per Table)
+| summarize TotalGB =sum(TotalGBytes),
+LogAnalyticsCost =sum(EstimatedALA_USD),
+SentinelCost =sum(EstimatedSEN_USD),
+EstimatedTotalCost=sum(EstimatedALA_USD + EstimatedSEN_USD),
+DaysSearched =daystoSearch
