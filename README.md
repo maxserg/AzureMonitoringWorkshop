@@ -20,3 +20,5 @@
 ### 3. Access to a machine with Visual Studio Code and the Azure PowerShell Modules loaded or Azure CLI.  VS Code ARM and PowerShell extensions should be configured.
 
 ![alt text](https://github.com/maxserg/AzureMonitoringWorkshop/blob/master/monitoringdiagram.png)
+
+### Test text from VS Code (remote connection)
