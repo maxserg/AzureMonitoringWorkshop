@@ -20,3 +20,6 @@
 ### 3. Access to a machine with Visual Studio Code and the Azure PowerShell Modules loaded or Azure CLI.  VS Code ARM and PowerShell extensions should be configured.
 
 ![alt text](https://github.com/maxserg/AzureMonitoringWorkshop/blob/master/monitoringdiagram.png)
+
+<img width='50' src='https://pngicon.ru/file/uploads/microsoft.png'/>
+This tile lets you put custom content on your dashboard. It supports plain text, __Markdown__, and even limited HTML like images <img width='10' src='https://ms.portal.azure.com/favicon.ico'/> and <a href='https://azure.microsoft.com' target='_blank'>links</a> that open in a new tab.
