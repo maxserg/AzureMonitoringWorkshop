@@ -1,0 +1,15 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+"parameters": {
+  "automationAccountName": {
+    "value": "demo-automationaccount-for-sap"
+  },
+  "automationRegion": {
+    "value": "westeurope"
+  },
+  "_artifactsLocation": {
+    "value": "https://github.com/maxserg/AzureMonitorAutomation/ARM-Examples/Automation-Account"
+  }
+}
+}
