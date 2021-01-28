@@ -7,7 +7,7 @@
 Install-Module -Name Az -Force -Scope CurrentUser -AllowClobber
 
 #Step 1: Use a name no longer then five charactors all lowercase.  Your initials would work well if working in the same sub as others.
-$MonitoringHackName = 'enter a 5 charactor value here all lowercase, mon01 for example'
+$MonitoringHackName = 'enter a 5 character value here all lowercase, mon11 for example'
 
 #Step 2: Create ResourceGroup after updating the location to one of your choice. Use get-AzLocation to see a list
 Connect-AzAccount
